@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bistro</string>
+    <string name="label_must_fill">Required.</string>
+    <string name="password_characters">password characters 6.</string>
+    <string name="empty_user">Username cannot be empty</string>
+    <string name="nothing_chng">Nothing has changed</string>
+    <string name="loading_save">Please Wait Save Profil</string>
+    <string name="compressing">Please Wait Compres</string>
+    <string name="do_you_want_logout">Are You Sure You Want To Logout?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="logout">Logout</string>
+    <string name="password_didn_t_match">Password_didn_t_match</string>
+
+</resources>

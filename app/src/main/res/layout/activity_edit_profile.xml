@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="edit"
+            type="com.maruchan.ui.edit.EditProfilrActivity" />
+
+        <variable
+            name="user"
+            type="com.maruchan.bistro.data.room.user.User" />
+
+        <variable
+            name="photo"
+            type="String" />
+
+        <variable
+            name="imageFileEdit"
+            type="java.io.File" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_profile"
+        tools:context="com.maruchan.ui.profile.ProfileActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_back_profile" />
+
+            <ImageView
+                android:id="@+id/edit_profile_img"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/img_edit_profile" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+
+
+                <ImageView
+                    android:id="@+id/img_photo_profile"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/btn_edit_picture"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_layout_edit_profile"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:gravity="center"
+                    android:text="Edit Password"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.94"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Username"
+                android:textStyle="bold"
+                android:textColor="@color/army"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/custome_background_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="start"
+                android:text='@{user.name}'
+                android:textColor="@color/army"
+                android:inputType="text"
+                android:singleLine="true"
+                android:hint="Name is empty"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Phone or Email"
+                android:textStyle="bold"
+                android:textColor="@color/army"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_phone_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/custome_background_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="start"
+                android:text='@{user.phoneOrEmail}'
+                android:textColor="@color/army"
+                android:hint="Phone or Email is empty"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="Autofill,LabelFor" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/btn_save"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_layout_profile"
+            android:fontFamily="@font/poppinsmedium"
+            android:gravity="center"
+            android:text="Confirm Changes"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

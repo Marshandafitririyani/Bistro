@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.maruchan.bistro.data.room.user.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_profile"
+        tools:context="com.maruchan.ui.profile.ProfileActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:foreground="?selectableItemBackground"
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_back_profile" />
+
+            <ImageView
+                android:id="@+id/img_photo_profile"
+                imageUrlAvatar='@{user.photoProfile.toString()}'
+                userHelper='@{user.name}'
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/name_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/poppinsbold"
+                android:text='@{user.name}'
+                android:gravity="center"
+                android:hint="Name is empty"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/army"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/phone_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:text='@{user.phoneOrEmail}'
+                android:hint="Phone/Email empty"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_layout_profile_edit"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:text="Edit Profile"
+                android:foreground="?selectableItemBackground"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/vw_pas"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btn_edit_password"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_layout_profile"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:text="Edit Password"
+                android:foreground="?selectableItemBackground"
+
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/btn_save"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_layout_profile"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:text="Saved Restaurants"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:foreground="?selectableItemBackground"
+
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/btn_logout"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_layout_profile"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:text="Logout"
+                android:foreground="?selectableItemBackground"
+
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
