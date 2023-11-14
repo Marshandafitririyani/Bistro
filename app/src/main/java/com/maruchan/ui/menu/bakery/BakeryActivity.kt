@@ -51,7 +51,18 @@ class BakeryActivity :
         observe()
         adapter()
         bistroList()
+        initClick()
 
+
+
+    }
+    private fun initClick(){
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            bistroList()
+        }
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun adapter() {
@@ -65,9 +76,16 @@ class BakeryActivity :
                 launch {
                     viewModel.bistroList.collect { bistro ->
                         Log.d("cek data 3", "$bistro")
+                        adapterResto.submitList(bistro)
+                        binding.swipeRefreshLayout.isRefreshing = false
                         bistroAll.clear()
                         bistroAll.addAll(bistro)
                         adapterResto.submitList(bistro)
+                        if (bistro.isEmpty()) {
+                            binding.tvEmpty.visibility = View.VISIBLE
+                        } else {
+                            binding.tvEmpty.visibility = View.GONE
+                        }
 
                     }
 

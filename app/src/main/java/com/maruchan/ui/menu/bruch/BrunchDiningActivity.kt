@@ -35,5 +35,8 @@ class BrunchDiningActivity :  BaseActivity<ActivityBrunchDiningctivityBinding, B
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 }

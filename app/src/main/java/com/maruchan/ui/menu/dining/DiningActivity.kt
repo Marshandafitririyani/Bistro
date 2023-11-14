@@ -38,5 +38,8 @@ class DiningActivity : BaseActivity<ActivityDiningBinding, DiningViewModel>(R.la
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 }

@@ -24,7 +24,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:foreground="?selectableItemBackground"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back_black" />
 
 
             <TextView
@@ -35,11 +54,12 @@
                 android:textColor="@color/army"
                 android:textStyle="bold"
                 android:textSize="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/poppinsmedium"/>
-
+        </LinearLayout>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

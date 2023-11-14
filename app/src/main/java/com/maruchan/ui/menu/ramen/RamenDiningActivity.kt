@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -46,7 +47,20 @@ class RamenDiningActivity : BaseActivity<ActivityRamenDiningBinding, RamenDining
         adapter()
         bistroList()
 
+        initClick()
+
+
+
     }
+    private fun initClick(){
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            bistroList()
+        }
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+    }
+
     private fun adapter() {
         binding.recyclerViewBakery.adapter = adapterResto
         Log.d("cek data 2", "$adapterResto")
@@ -58,9 +72,16 @@ class RamenDiningActivity : BaseActivity<ActivityRamenDiningBinding, RamenDining
                 launch {
                     viewModel.bistroList.collect { bistro ->
                         Log.d("cek data 3", "$bistro")
+                        adapterResto.submitList(bistro)
+                        binding.swipeRefreshLayout.isRefreshing = false
                         bistroAll.clear()
                         bistroAll.addAll(bistro)
                         adapterResto.submitList(bistro)
+                        if (bistro.isEmpty()) {
+                            binding.tvEmpty.visibility = View.VISIBLE
+                        } else {
+                            binding.tvEmpty.visibility = View.GONE
+                        }
 
                     }
 
