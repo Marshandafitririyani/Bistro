@@ -30,8 +30,6 @@ class BakeryActivity :
     BaseActivity<ActivityBakeryBinding, BakeryViewModel>(R.layout.activity_bakery) {
 
     private val bistroAll = ArrayList<BistroList?>()
-    private val categoryList = ArrayList<Category?>()
-    private var categoryId: String? = null
 
 
     private val adapterResto by lazy {

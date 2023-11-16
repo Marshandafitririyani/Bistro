@@ -17,6 +17,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bistro"
         tools:targetApi="34">
+
+        <activity
+            android:name="com.maruchan.ui.table.TableActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.maruchan.ui.menu.showmenu.ShowMenuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.maruchan.ui.menu.pizza.PizzeriaActivity"
             android:exported="false">

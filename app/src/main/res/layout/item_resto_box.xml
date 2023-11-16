@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/img_destination"
@@ -37,6 +37,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_name_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:text='@{data.name}'
+                android:hint="banda_neira"
+                android:maxLines="1"
+                android:layout_margin="@dimen/_2sdp"
+                android:textColor="@color/army"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

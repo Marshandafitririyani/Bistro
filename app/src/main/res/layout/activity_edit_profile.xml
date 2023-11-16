@@ -71,7 +71,7 @@
 
                 <TextView
                     android:id="@+id/btn_edit_picture"
-                    android:layout_width="@dimen/_150sdp"
+                    android:layout_width="@dimen/_130sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/custom_layout_edit_profile"

@@ -111,6 +111,7 @@
                         android:src="@drawable/ic_bookmark"/>
 
                     <ImageView
+                        android:id="@+id/btn_send"
                         android:layout_width="@dimen/_25sdp"
                         android:foreground="?selectableItemBackground"
 
@@ -159,7 +160,6 @@
                     android:fontFamily="@font/poppinsmedium"
                     android:gravity="center"
                     android:foreground="?selectableItemBackground"
-
                     android:text="Order a Table"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -188,6 +188,7 @@
                     android:src="@drawable/img_home_horizontala" />
             </LinearLayout>
             <TextView
+                android:id="@+id/tv_decs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text='@{data.description}'

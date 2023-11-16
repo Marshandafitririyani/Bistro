@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.maruchan.ui.table.TableActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/img_back_profile" />
+
+        <ImageView
+            android:id="@+id/edit_profile_img"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/img_order" />
+
+
+            <ImageView
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/img_table" />
+
+            <TextView
+                android:id="@+id/order_a_tab"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:background="@drawable/custom_layout_profile"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:foreground="?selectableItemBackground"
+                android:text="Order Table"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

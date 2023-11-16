@@ -22,6 +22,8 @@ import com.maruchan.bistro.databinding.ItemRestoBoxBinding
 import com.maruchan.ui.menu.bakery.BakeryActivity
 import com.maruchan.ui.menu.fastfood.FastFoodActivity
 import com.maruchan.ui.menu.lunchdining.LunchDiningActivity
+import com.maruchan.ui.menu.showmenu.ShowMenuActivity
+import com.maruchan.ui.table.TableActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -75,21 +77,16 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
                 whatsapp("+62$nomorHp")
             }
         }
-        /*binding.btnBakery.setOnClickListener {
-            openActivity<BakeryActivity>()
+        binding.showMenu.setOnClickListener {
+            openActivity<ShowMenuActivity>()
         }
-        binding.btnFastFood.setOnClickListener {
-            openActivity<FastFoodActivity>()
+        binding.btnSend.setOnClickListener {
+            shareText()
         }
-        binding.btnLaunchDining.setOnClickListener {
-            openActivity<LunchDiningActivity>()
+        binding.orderATab.setOnClickListener {
+            openActivity<TableActivity>()
         }
-        binding.btnSaveDetail.setOnClickListener {
-            val myId = myUser?.id
-            val bistroId = bistro?.id
-            viewModel.getLike(myId, bistroId)
-            setResult(Const.LIST.RELOAD) // TODO: apabila tombol di klik berarti ada perubaham like, dan mengirimkan kode result agar list data di reload kembali
-        }*/
+
     }
 
     private fun adapter(){
@@ -137,5 +134,15 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
         val waIntent = Intent(Intent.ACTION_VIEW)
         waIntent.setData(intentUri)
         startActivity(waIntent)
+    }
+
+    private fun shareText() {
+        val sendIntent = Intent()
+        sendIntent.action = Intent.ACTION_SEND
+        sendIntent.putExtra(Intent.EXTRA_TEXT, binding.tvAddress.getText().toString())
+        sendIntent.type = "text/plain"
+        val shareIntent = Intent.createChooser(sendIntent, "chat")
+        startActivity(shareIntent)
+
     }
 }
