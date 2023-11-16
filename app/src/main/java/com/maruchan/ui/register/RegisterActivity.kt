@@ -1,6 +1,5 @@
 package com.maruchan.ui.register
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Lifecycle
@@ -14,7 +13,6 @@ import com.crocodic.core.extension.textOf
 import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
 import com.maruchan.bistro.databinding.ActivityRegisterBinding
-import com.maruchan.ui.home.HomeActivity
 import com.maruchan.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -29,9 +27,12 @@ class RegisterActivity :
         initClick()
     }
 
-    private fun initClick(){
+    private fun initClick() {
         binding.btnRegister.setOnClickListener {
             register()
+        }
+        binding.tvSingUp.setOnClickListener {
+            finish()
         }
     }
 
@@ -57,10 +58,11 @@ class RegisterActivity :
                 binding.tvPasswordNotMatch.visibility = View.VISIBLE
             } else {
                 binding.tvPasswordNotMatch.visibility = View.GONE
-                viewModel.register(name, phone, password,confirmPassword)
+                viewModel.register(name, phone, password, confirmPassword)
             }
         }
     }
+
     private fun observe() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

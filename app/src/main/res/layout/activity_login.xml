@@ -5,17 +5,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="com.maruchan.ui.login.LoginActivity">
 
         <ImageView
+            android:id="@+id/login_long"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
-            android:src="@drawable/img_login"
             android:layout_margin="@dimen/_5sdp"
+            android:labelFor="@+id/login_long"
             android:scaleType="fitXY"
-            />
+            android:src="@drawable/img_login"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -23,29 +25,29 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Phone/Email"
-            android:textStyle="bold"
+            android:text="@string/phone_email"
             android:textColor="@color/army"
-            android:textSize="@dimen/_15ssp" />
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_phone_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
-            android:padding="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/custome_background_search"
             android:drawablePadding="@dimen/_8sdp"
             android:fontFamily="@font/poppinsregular"
             android:gravity="start"
-            android:textColor="@color/army"
             android:hint="Phone or Email"
             android:inputType="text"
+            android:padding="@dimen/_10sdp"
             android:singleLine="true"
+            android:textColor="@color/army"
             android:textSize="@dimen/_12ssp"
-            tools:ignore="Autofill,LabelFor" />
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,20 +56,21 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/poppinsregular"
             android:text="Password"
-            android:textStyle="bold"
             android:textColor="@color/army"
-            android:textSize="@dimen/_15ssp" />
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:hintEnabled="false"
-            android:layout_marginEnd="@dimen/_15sdp"
             android:layout_marginStart="@dimen/_15sdp"
-            app:passwordToggleTint="@color/army"
-            app:passwordToggleEnabled="true">
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/army">
 
             <EditText
                 android:id="@+id/et_password"
@@ -78,10 +81,10 @@
                 android:autofillHints="password"
                 android:background="@drawable/custome_background_search"
                 android:drawablePadding="@dimen/_8sdp"
+                android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColor="@color/army"
-                android:hint="Password"
                 android:singleLine="true"
+                android:textColor="@color/army"
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="LabelFor" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,11 +94,11 @@
             android:layout_width="@dimen/_220sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_190sdp"
             android:background="@drawable/custom_layout_login"
             android:fontFamily="@font/poppinsregular"
             android:gravity="center"
-            android:text="Login"
-            android:layout_marginTop="@dimen/_190sdp"
+            android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_13ssp" />
@@ -113,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:foreground="?selectableItemBackground"
                 android:gravity="center"
-                android:text="Don't have An Account?"
+                android:text="@string/don_t_have_an_account"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp" />
 
@@ -123,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:foreground="?selectableItemBackground"
-                android:text="Register"
+                android:text="@string/register"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/_13ssp" />
         </LinearLayout>

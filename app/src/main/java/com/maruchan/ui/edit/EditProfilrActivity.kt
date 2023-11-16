@@ -1,16 +1,17 @@
 package com.maruchan.ui.edit
 
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.crocodic.core.api.ApiStatus
-import com.crocodic.core.extension.*
+import com.crocodic.core.extension.createImageFile
+import com.crocodic.core.extension.openGallery
+import com.crocodic.core.extension.snacked
+import com.crocodic.core.extension.textOf
 import com.crocodic.core.helper.BitmapHelper
 import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
@@ -25,7 +26,6 @@ class EditProfilrActivity :
     BaseActivity<ActivityEditProfileBinding, EditProfilViewModel>(R.layout.activity_edit_profile) {
     private var photoFile: File? = null
     private var username: String? = null
-    private var phoneOrEmail: String? = null
     private var photo: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +70,6 @@ class EditProfilrActivity :
 
             photoFile = createImageFile().also { it.writeBitmap(resizeBitmap) }
             binding.imageFileEdit = photoFile
-//            Log.d("foto", "$photoFile")
             file?.delete()
         }
     }
@@ -82,16 +81,12 @@ class EditProfilrActivity :
         if (name.isEmpty()) {
             binding.root.snacked(R.string.empty_user)
             return
-            tos("name")
-            Log.d("nama1", "$name")
         }
 
         if (photoFile == null) {
             if (name == username) {
                 binding.root.snacked(R.string.nothing_chng)
                 return
-                tos("photo")
-                Log.d("nama2", "$photoFile")
             }
             viewModel.updateProfile(name)
         } else {

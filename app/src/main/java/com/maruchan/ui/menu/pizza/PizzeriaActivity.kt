@@ -1,9 +1,7 @@
 package com.maruchan.ui.menu.pizza
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -13,26 +11,20 @@ import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
 import com.maruchan.bistro.const.Const
 import com.maruchan.bistro.data.room.bistroo.BistroList
-import com.maruchan.bistro.data.room.bistroo.Category
-import com.maruchan.bistro.databinding.ActivityLunchDiningBinding
 import com.maruchan.bistro.databinding.ActivityPizzeriaBinding
 import com.maruchan.bistro.databinding.ItemRestoBinding
 import com.maruchan.ui.detail.DetailActivity
-import com.maruchan.ui.menu.lunchdining.LunchDiningViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class PizzeriaActivity : BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel>(R.layout.activity_pizzeria) {
+class PizzeriaActivity :
+    BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel>(R.layout.activity_pizzeria) {
     private val bistroAll = ArrayList<BistroList?>()
-    private val categoryList = ArrayList<Category?>()
-    private var categoryId: String? = null
-
 
     private val adapterResto by lazy {
         ReactiveListAdapter<ItemRestoBinding, BistroList>(R.layout.item_resto).initItem { position, data ->
             val bistro = Intent(this, DetailActivity::class.java).apply {
-                Log.d("cek data 1", "$data")
                 putExtra(Const.BISTRO.BISTRO, data)
             }
 
@@ -49,7 +41,8 @@ class PizzeriaActivity : BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel
         initClick()
 
     }
-    private fun initClick(){
+
+    private fun initClick() {
         binding.swipeRefreshLayout.setOnRefreshListener {
             bistroList()
         }
@@ -60,10 +53,8 @@ class PizzeriaActivity : BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel
             finish()
         }
     }
-
     private fun adapter() {
         binding.recyclerViewBakery.adapter = adapterResto
-        Log.d("cek data 2", "$adapterResto")
     }
 
     private fun observe() {
@@ -71,7 +62,6 @@ class PizzeriaActivity : BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.bistroList.collect { bistro ->
-                        Log.d("cek data 3", "$bistro")
                         adapterResto.submitList(bistro)
                         binding.swipeRefreshLayout.isRefreshing = false
                         bistroAll.clear()
@@ -88,12 +78,12 @@ class PizzeriaActivity : BaseActivity<ActivityPizzeriaBinding, PizzeriaViewModel
                 }
 
 
-
             }
 
         }
 
     }
+
     private fun bistroList() {
         viewModel.getBistroList()
     }

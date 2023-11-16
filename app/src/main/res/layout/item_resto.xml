@@ -2,8 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    
+
     <data>
+
         <variable
             name="data"
             type="com.maruchan.bistro.data.room.bistroo.BistroList" />
@@ -25,13 +26,13 @@
 
             <ImageView
                 android:id="@+id/img_destination"
+                imageUrl='@{data.photo}'
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:scaleType="fitXY"
-                imageUrl='@{data.photo}'
                 android:background="@drawable/custome_background_search"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_cafe"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.069"
@@ -43,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
-                android:orientation="vertical"
                 android:background="@drawable/custome_background_search"
+                android:orientation="vertical"
                 android:padding="@dimen/_10sdp">
 
                 <TextView
@@ -53,9 +54,9 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="start"
-                    android:text='@{data.name}'
-                    android:hint="banda_neira"
+                    android:hint="@string/banda_nira"
                     android:maxLines="1"
+                    android:text='@{data.name}'
                     android:textColor="@color/army"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold" />
@@ -82,21 +83,22 @@
                         android:layout_marginStart="@dimen/_5sdp"
                         android:ellipsize="end"
                         android:gravity="start"
-                        android:text='@{data.address}'
-                        android:hint="maluku_indonesia"
+                        android:hint="@string/maluku_indonesia"
                         android:maxLines="1"
+                        android:text='@{data.address}'
                         android:textSize="@dimen/_10sdp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="start"
-                    android:text='@{data.category.name}'
-                    android:hint="banda_neira"
+                    android:hint="@string/categoty"
                     android:maxLines="1"
+                    android:text='@{data.category.name}'
                     android:textColor="@color/black"
                     android:textSize="@dimen/_13sdp" />
 

@@ -15,7 +15,7 @@ import org.json.JSONObject
 import javax.inject.Inject
 
 @HiltViewModel
-class RegisterViewModel  @Inject constructor(
+class RegisterViewModel @Inject constructor(
     private val apiService: ApiService,
     private val gson: Gson,
     private val userDao: UserDao,
@@ -32,7 +32,7 @@ class RegisterViewModel  @Inject constructor(
     ) = viewModelScope.launch {
         _apiResponse.emit(ApiResponse().responseLoading())
         baseObserver(
-            block = { apiService.register(name,phoneOrEmail , password, confirmPassword) },
+            block = { apiService.register(name, phoneOrEmail, password, confirmPassword) },
             toast = false,
             responseListener = object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {

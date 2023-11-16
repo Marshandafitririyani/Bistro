@@ -101,9 +101,12 @@
 
 
                             <ImageView
+                                android:id="@+id/blck_long_home"
                                 android:layout_width="@dimen/_230sdp"
                                 android:layout_height="@dimen/_20sdp"
-                                android:src="@drawable/img_home_horizontala" />
+                                android:labelFor="@+id/blck_long_home"
+                                android:src="@drawable/img_home_horizontala"
+                                tools:ignore="ContentDescription" />
 
                             <AutoCompleteTextView
                                 android:id="@+id/et_search_filter"
@@ -142,11 +145,14 @@
                             app:layout_constraintTop_toBottomOf="@+id/linear_home">
 
                             <ImageView
+                                android:id="@+id/slider"
                                 android:layout_width="@dimen/_280sdp"
                                 android:layout_height="@dimen/_135sdp"
                                 android:layout_gravity="center"
+                                android:labelFor="@+id/slider"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/img_slider_fram" />
+                                android:src="@drawable/img_slider_fram"
+                                tools:ignore="ContentDescription" />
 
                             <HorizontalScrollView
                                 android:layout_width="match_parent"
@@ -170,9 +176,10 @@
                                         android:layout_width="@dimen/_200sdp"
                                         android:layout_height="@dimen/_127sdp"
                                         android:foreground="?selectableItemBackground"
+                                        android:labelFor="@+id/img_slider"
                                         android:scaleType="fitXY"
-
-                                        android:src="@drawable/img_lumpia" />
+                                        android:src="@drawable/img_lumpia"
+                                        tools:ignore="ContentDescription,TooDeepLayout" />
 
                                     <ImageView
                                         android:id="@+id/img_slider_two"
@@ -180,18 +187,22 @@
                                         android:layout_height="@dimen/_130sdp"
                                         android:layout_marginStart="@dimen/_3sdp"
                                         android:foreground="?selectableItemBackground"
+                                        android:labelFor="@+id/img_slider_two"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/img_caffee_slider" />
+                                        android:src="@drawable/img_caffee_slider"
+                                        tools:ignore="ContentDescription" />
 
 
                                     <ImageView
                                         android:id="@+id/img_slider_tree"
                                         android:layout_width="@dimen/_220sdp"
                                         android:layout_height="@dimen/_127sdp"
-                                        android:foreground="?selectableItemBackground"
-                                        android:scaleType="fitXY"
                                         android:layout_marginStart="@dimen/_3sdp"
-                                        android:src="@drawable/img_nasgor_slider" />
+                                        android:foreground="?selectableItemBackground"
+                                        android:labelFor="@+id/img_slider_tree"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/img_nasgor_slider"
+                                        tools:ignore="ContentDescription" />
 
                                     <ImageView
                                         android:id="@+id/img_slider_for"
@@ -199,23 +210,21 @@
                                         android:layout_height="@dimen/_130sdp"
                                         android:layout_marginStart="@dimen/_3sdp"
                                         android:foreground="?selectableItemBackground"
+                                        android:labelFor="@+id/img_slider_for"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/img_pizza_slider" />
+                                        android:src="@drawable/img_pizza_slider"
+                                        tools:ignore="ContentDescription" />
                                 </LinearLayout>
                             </HorizontalScrollView>
-                            <!-- <ImageView
-                                 android:id="@+id/img_slider"
-                                 android:layout_width="@dimen/_220sdp"
-                                 android:layout_height="@dimen/_130sdp"
-                                 android:layout_gravity="center"
-                                 android:layout_marginStart="@dimen/_8sdp"
-                                 android:src="@drawable/img_lumpia" />-->
 
                             <ImageView
+                                android:id="@+id/white_long"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_105sdp"
-                                android:src="@drawable/img_slider" />
+                                android:labelFor="@+id/white_long"
+                                android:src="@drawable/img_slider"
+                                tools:ignore="ContentDescription" />
 
                         </FrameLayout>
 
@@ -237,7 +246,9 @@
                                     android:layout_width="@dimen/_80sdp"
                                     android:layout_height="@dimen/_80sdp"
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_fast_food" />
+                                    android:labelFor="@+id/btn_fast_food"
+                                    android:src="@drawable/img_fast_food"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_bakery"
@@ -245,34 +256,39 @@
                                     android:layout_height="@dimen/_80sdp"
                                     android:layout_marginStart="@dimen/_10sdp"
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_bakery" />
+                                    android:labelFor="@id/btn_bakery"
+                                    android:src="@drawable/img_bakery"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_launch_dining"
                                     android:layout_width="@dimen/_80sdp"
                                     android:layout_height="@dimen/_80sdp"
-
                                     android:layout_marginStart="@dimen/_10sdp"
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_launch_dining" />
+                                    android:labelFor="@id/btn_launch_dining"
+                                    android:src="@drawable/img_launch_dining"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_ramen_dining"
                                     android:layout_width="@dimen/_80sdp"
                                     android:layout_height="@dimen/_80sdp"
                                     android:layout_marginStart="@dimen/_10sdp"
-
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_ramen_dining" />
+                                    android:labelFor="@+id/btn_ramen_dining"
+                                    android:src="@drawable/img_ramen_dining"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_brunch_dining"
                                     android:layout_width="@dimen/_80sdp"
                                     android:layout_height="@dimen/_80sdp"
-
                                     android:layout_marginStart="@dimen/_10sdp"
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_brunch_dining" />
+                                    android:labelFor="@+id/btn_brunch_dining"
+                                    android:src="@drawable/img_brunch_dining"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_dining"
@@ -280,8 +296,9 @@
                                     android:layout_height="@dimen/_80sdp"
                                     android:layout_marginStart="@dimen/_10sdp"
                                     android:foreground="?selectableItemBackground"
-
-                                    android:src="@drawable/img_dining" />
+                                    android:labelFor="@+id/btn_dining"
+                                    android:src="@drawable/img_dining"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_caffe"
@@ -289,33 +306,24 @@
                                     android:layout_height="@dimen/_80sdp"
                                     android:layout_marginStart="@dimen/_10sdp"
                                     android:foreground="?selectableItemBackground"
-
-                                    android:src="@drawable/img_cafe" />
+                                    android:labelFor="@+id/btn_caffe"
+                                    android:src="@drawable/img_cafe"
+                                    tools:ignore="ContentDescription" />
 
                                 <ImageView
                                     android:id="@+id/btn_pizza"
                                     android:layout_width="@dimen/_80sdp"
                                     android:layout_height="@dimen/_80sdp"
-
                                     android:layout_marginStart="@dimen/_10sdp"
-
                                     android:foreground="?selectableItemBackground"
-                                    android:src="@drawable/img_pizzeria" />
+
+                                    android:labelFor="@+id/btn_pizza"
+                                    android:src="@drawable/img_pizzeria"
+                                    tools:ignore="ContentDescription" />
 
 
                             </LinearLayout>
                         </HorizontalScrollView>
-
-                        <!-- <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                             android:id="@+id/swipe_refresh_layout"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:layout_marginTop="@dimen/_10sdp"
-                             app:layout_constraintBottom_toBottomOf="parent"
-                             app:layout_constraintEnd_toEndOf="parent"
-                             app:layout_constraintStart_toStartOf="parent"
-                             app:layout_constraintTop_toBottomOf="@id/img_slider">-->
-
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recycler_view_home"
@@ -325,7 +333,6 @@
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             tools:listitem="@layout/item_resto" />
 
-                        <!--            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
                     </LinearLayout>
                 </androidx.core.widget.NestedScrollView>
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -343,7 +350,7 @@
             android:layout_marginEnd="@dimen/_40sdp"
             android:fontFamily="@font/poppinsregular"
             android:gravity="center"
-            android:text="file_product_is_empty"
+            android:text="@string/file_resto_is_empty"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

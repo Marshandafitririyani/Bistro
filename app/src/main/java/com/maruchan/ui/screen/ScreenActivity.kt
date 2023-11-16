@@ -8,7 +8,6 @@ import com.maruchan.bistro.databinding.ActivityScreenBinding
 import com.maruchan.ui.home.HomeActivity
 import com.maruchan.ui.splash.SplashActivity
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class ScreenActivity : BaseActivity<ActivityScreenBinding, ScreenViewModel>(R.layout.activity_screen) {

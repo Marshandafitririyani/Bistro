@@ -28,17 +28,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
+class DetailActivity :
+    BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
     private var bistro: BistroList? = null
-    private var myUser: BistroList? = null
-    private var isUser: Boolean = true
     private val produkAll = ArrayList<BistroList?>()
-    private val imageList = ArrayList<SlideModel>()
 
     private val adapterResto by lazy {
         ReactiveListAdapter<ItemRestoBoxBinding, BistroList>(R.layout.item_resto_box).initItem { position, data ->
             val toEdit = Intent(this, DetailActivity::class.java).apply {
-                Log.d("cek data 1", "$data")
                 putExtra(Const.BISTRO.BISTRO, data)
             }
 
@@ -51,7 +48,7 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
         super.onCreate(savedInstanceState)
 
         val data = intent.getParcelableExtra<BistroList>(Const.BISTRO.BISTRO)
-        binding.data=data
+        binding.data = data
 
         initClick()
         observe()
@@ -59,7 +56,8 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
         adapter()
 
     }
-    private fun initClick(){
+
+    private fun initClick() {
         binding.btnBackEditProfile.setOnClickListener {
             finish()
         }
@@ -89,16 +87,16 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
 
     }
 
-    private fun adapter(){
+    private fun adapter() {
         binding.rvDetail.adapter = adapterResto
 
     }
+
     private fun observe() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.bistroBox.collect { bistro ->
-                        Log.d("cek data 3", "$bistro")
                         adapterResto.submitList(bistro)
                         produkAll.clear()
                         produkAll.addAll(bistro)
@@ -119,9 +117,11 @@ class DetailActivity :  BaseActivity<ActivityDetailBinding, DetailViewModel>(R.l
         }
 
     }
+
     private fun bistroBoxList() {
         viewModel.getBistroBoxList()
     }
+
     private fun maps() {
         val intentUri = Uri.parse("google.navigation:q=${bistro?.name}&mode=d")
         val mapIntent = Intent(Intent.ACTION_VIEW, intentUri)

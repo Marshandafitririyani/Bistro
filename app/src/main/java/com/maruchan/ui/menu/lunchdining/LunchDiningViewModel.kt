@@ -1,6 +1,5 @@
 package com.maruchan.ui.menu.lunchdining
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiCode
 import com.crocodic.core.api.ApiObserver
@@ -45,14 +44,12 @@ class LunchDiningViewModel  @Inject constructor(
                     Timber.d("cek api ${data.size}")
 
                     _apiResponse.emit(ApiResponse().responseSuccess())
-                    Log.d("cek ss","success")
 
                 }
 
                 override suspend fun onError(response: ApiResponse) {
                     super.onError(response)
                     _apiResponse.emit(ApiResponse().responseError())
-                    Log.d("cek err","error")
                 }
             })
     }

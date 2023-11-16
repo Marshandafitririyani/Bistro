@@ -1,6 +1,5 @@
 package com.maruchan.ui.password
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Lifecycle
@@ -13,9 +12,7 @@ import com.crocodic.core.extension.textOf
 import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
 import com.maruchan.bistro.databinding.ActivityEditPasswordBinding
-import com.maruchan.bistro.databinding.ActivityProfileBinding
 import com.maruchan.ui.home.HomeActivity
-import com.maruchan.ui.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -39,7 +36,7 @@ class EditPasswordActivity :
 
     }
 
-    private fun editPassword(){
+    private fun editPassword() {
         if (
             binding.etPasswordOld.isEmptyRequired(R.string.label_must_fill) ||
             binding.etPasswordNew.isEmptyRequired(R.string.label_must_fill) ||

@@ -41,8 +41,10 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:foreground="?selectableItemBackground"
+                    android:labelFor="@+id/btn_back"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_back_black" />
+                    android:src="@drawable/ic_back_black"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/bakery_title"
@@ -53,18 +55,21 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:fontFamily="@font/poppinsmedium"
                     android:gravity="center"
-                    android:text="Caffee"
+                    android:text="@string/caffee"
                     android:textColor="@color/army"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/long_long"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:labelFor="@id/long_long"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_home_horizontala" />
+                android:src="@drawable/img_home_horizontala"
+                tools:ignore="ContentDescription" />
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipe_refresh_layout"
@@ -98,7 +103,7 @@
             android:layout_marginEnd="@dimen/_40sdp"
             android:fontFamily="@font/poppinsregular"
             android:gravity="center"
-            android:text="File Resto Is Empty"
+            android:text="@string/file_resto_is_empty"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

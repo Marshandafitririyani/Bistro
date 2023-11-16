@@ -29,11 +29,12 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:foreground="?selectableItemBackground"
-
                 android:layout_marginTop="@dimen/_10sdp"
+                android:foreground="?selectableItemBackground"
+                android:labelFor="@id/btn_back"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_back_profile" />
+                android:src="@drawable/img_back_profile"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/img_photo_profile"
@@ -43,31 +44,32 @@
                 android:layout_height="@dimen/_120sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/name_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:fontFamily="@font/poppinsbold"
-                android:text='@{user.name}'
                 android:gravity="center"
-                android:hint="Name is empty"
-                android:textStyle="bold"
-                android:layout_gravity="center"
+                android:hint="@string/name_is_empty"
+                android:text='@{user.name}'
                 android:textColor="@color/army"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/phone_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsregular"
-                android:text='@{user.phoneOrEmail}'
-                android:hint="Phone/Email empty"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppinsregular"
                 android:gravity="center"
+                android:hint="@string/phone_email_empty"
+                android:text='@{user.phoneOrEmail}'
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp" />
 
@@ -79,13 +81,13 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/custom_layout_profile_edit"
                 android:fontFamily="@font/poppinsmedium"
-                android:gravity="center"
-                android:text="Edit Profile"
                 android:foreground="?selectableItemBackground"
-                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/edit_profile"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
 
             <View
                 android:id="@+id/vw_pas"
@@ -93,8 +95,8 @@
                 android:layout_height="1.5dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,10 +111,9 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/custom_layout_profile"
                 android:fontFamily="@font/poppinsmedium"
-                android:gravity="center"
-                android:text="Edit Password"
                 android:foreground="?selectableItemBackground"
-
+                android:gravity="center"
+                android:text="@string/edit_password"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp" />
@@ -125,11 +126,11 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/custom_layout_profile"
                 android:fontFamily="@font/poppinsmedium"
+                android:foreground="?selectableItemBackground"
                 android:gravity="center"
-                android:text="Saved Restaurants"
+                android:text="@string/saved_restaurants"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:foreground="?selectableItemBackground"
 
                 android:textSize="@dimen/_13ssp" />
 
@@ -141,10 +142,9 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/custom_layout_profile"
                 android:fontFamily="@font/poppinsmedium"
-                android:gravity="center"
-                android:text="Logout"
                 android:foreground="?selectableItemBackground"
-
+                android:gravity="center"
+                android:text="@string/logout"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp" />

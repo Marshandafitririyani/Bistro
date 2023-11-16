@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="data"
             type="com.maruchan.bistro.data.room.bistroo.BistroList" />
@@ -25,12 +26,12 @@
 
             <ImageView
                 android:id="@+id/img_destination"
+                imageUrl='@{data.photo}'
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
-                android:scaleType="fitXY"
-                imageUrl='@{data.photo}'
                 android:background="@drawable/custome_background_search"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_cafe"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.069"
@@ -42,18 +43,16 @@
                 android:id="@+id/tv_name_destination"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2sdp"
                 android:ellipsize="end"
                 android:gravity="start"
-                android:text='@{data.name}'
-                android:hint="banda_neira"
+                android:hint="@string/banda_nira"
                 android:maxLines="1"
-                android:layout_margin="@dimen/_2sdp"
+                android:text='@{data.name}'
                 android:textColor="@color/army"
                 android:textSize="@dimen/_13sdp"
                 android:textStyle="bold" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
 </layout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="data"
             type="com.maruchan.bistro.data.room.bistroo.BistroList" />
@@ -13,411 +14,288 @@
             type="com.maruchan.ui.detail.DetailActivity" />
 
 
-
-
-
     </data>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/transparant">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparant"
-        tools:context=".ui.detail.DetailDestinationActivity">
-
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_190sdp"
-            android:background="@color/gray"
-            android:labelFor="@+id/imageView"
-            android:scaleType="fitXY"
-            imageUrl='@{data.photo}'
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/btn_back_edit_profile"
-            android:layout_width="@dimen/_85sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:foreground="?selectableItemBackground"
-            android:labelFor="@+id/btn_back_detail_destination"
-            android:padding="@dimen/_5sdp"
-            android:src="@drawable/img_back_profile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_175sdp"
-            android:background="@color/white"
-            android:orientation="vertical"
+            android:background="@color/transparant"
+            tools:context=".ui.detail.DetailDestinationActivity">
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_view"
-            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/image_view"
+                imageUrl='@{data.photo}'
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_190sdp"
+                android:background="@color/gray"
+                android:labelFor="@+id/imageView"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/btn_back_edit_profile"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:foreground="?selectableItemBackground"
+                android:labelFor="@+id/btn_back_detail_destination"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/img_back_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_15sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_175sdp"
+                android:background="@color/white"
                 android:orientation="vertical"
-                tools:ignore="UselessParent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text='@{data.name}'
-                    android:hint="Name Resto"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_20ssp"
-                    android:textStyle="bold" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tv_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Jl Jangli Gabeng "
-                    android:text='@{data.address}'
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14ssp"
-                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_30sdp"
-                        android:foreground="?selectableItemBackground"
-                        android:src="@drawable/ic_bookmark"/>
-
-                    <ImageView
-                        android:id="@+id/btn_send"
-                        android:layout_width="@dimen/_25sdp"
-                        android:foreground="?selectableItemBackground"
-
-                        android:layout_height="@dimen/_30sdp"
-                        android:layout_marginStart="@dimen/_5sdp"
-                        android:src="@drawable/ic_send"/>
+                    android:layout_margin="@dimen/_15sdp"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
 
                     <TextView
-                        android:id="@+id/contact_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name_resto"
+                        android:text='@{data.name}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Contact: 08976690 "
-                        android:textColorHint="@color/black"
-                        android:text='@{"Contact: "+ data.Contact}'
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/jl_jangli_gabeng"
+                        android:text='@{data.address}'
                         android:textColor="@color/black"
-                        android:gravity="end"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:foreground="?selectableItemBackground"
+                            android:src="@drawable/ic_bookmark"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/btn_send"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_30sdp"
+
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:foreground="?selectableItemBackground"
+                            android:src="@drawable/ic_send"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/contact_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:hint="@string/contact_08976690"
+                            android:text='@{"Contact: "+ data.Contact}'
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btn_contact_chat"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_gravity="center"
-                        android:textSize="@dimen/_14ssp"
-                        />
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/custom_layout_profile_edit"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/contact_via_whatsapp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/order_a_tab"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/custom_layout_profile"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/order_a_table"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        android:id="@+id/show_menu"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/custom_layout_profile"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/show_menu"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/img_home_horizontala"
+                        tools:ignore="ContentDescription" />
 
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/btn_contact_chat"
-                    android:layout_width="@dimen/_220sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/custom_layout_profile_edit"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:gravity="center"
-                    android:foreground="?selectableItemBackground"
-                    android:text="Contact Via WhatsApp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/order_a_tab"
-                    android:layout_width="@dimen/_220sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/custom_layout_profile"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:gravity="center"
-                    android:foreground="?selectableItemBackground"
-                    android:text="Order a Table"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-                <TextView
-                    android:id="@+id/show_menu"
-                    android:layout_width="@dimen/_220sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/custom_layout_profile"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:gravity="center"
-                    android:foreground="?selectableItemBackground"
-
-                    android:text="Show Menu"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-                <ImageView
+                    android:id="@+id/tv_decs"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/img_home_horizontala" />
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_decs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text='@{data.description}'
-                android:hint="Jl Jangli Gabeng Jl Jangli Gabeng  Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng Jl Jangli Gabeng "
-                android:textColor="@color/black"
-               android:layout_marginStart="@dimen/_15sdp"
-               android:layout_marginEnd="@dimen/_15sdp"
-                android:textSize="@dimen/_14ssp"
-                />
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:hint="@string/address"
+                    android:text='@{data.description}'
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_15sdp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name Resto"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/img_home_horizontala" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/name_resto"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/img_home_horizontala"
+                        tools:ignore="ContentDescription" />
 
 
-        </LinearLayout>
-          <!--  <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:orientation="horizontal">
+                </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/btn_fast_food"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_fast_food" />
-
-                <ImageView
-                    android:id="@+id/btn_bakery"
-                    android:layout_width="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_bakery" />
-
-                <ImageView
-                    android:id="@+id/btn_launch_dining"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_launch_dining" />
-
-                <ImageView
-                    android:id="@+id/btn_ramen_dining"
-                    android:layout_width="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_ramen_dining" />
-
-                <ImageView
-                    android:id="@+id/btn_brunch_dining"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_brunch_dining" />
-
-                <ImageView
-                    android:id="@+id/btn_dining"
-                    android:layout_width="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_dining" />
-
-                <ImageView
-                    android:id="@+id/btn_caffe"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_cafe" />
-
-                <ImageView
-                    android:id="@+id/btn_pizza"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:foreground="?selectableItemBackground"
-
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/img_pizzeria" />
-
-
-            </LinearLayout>
-            </HorizontalScrollView>-->
-
-            <TextView
-                android:id="@+id/tv_empty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginEnd="@dimen/_40sdp"
-                android:fontFamily="@font/poppinsregular"
-                android:gravity="center"
-                android:text="file_product_is_empty"
-                android:textSize="@dimen/_15ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="@dimen/_8sdp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="1"
-                tools:listitem="@layout/item_resto_box" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_15sdp"
-                android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/tv_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:gravity="center"
+                    android:text="@string/file_resto_is_empty"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_15ssp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_8sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="1"
+                    tools:listitem="@layout/item_resto_box" />
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/img_home_horizontala" />
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/location"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/img_home_horizontala"
+                        tools:ignore="ContentDescription" />
 
 
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/maps"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/custom_layout_profile_edit"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/open_maps"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
             </LinearLayout>
 
- <!--           <ImageView
-                android:id="@+id/btn_fast_foods"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_fast_food" />-->
-
-            <TextView
-                android:id="@+id/maps"
-                android:layout_width="@dimen/_220sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_gravity="center"
-                android:background="@drawable/custom_layout_profile_edit"
-                android:fontFamily="@font/poppinsmedium"
-                android:gravity="center"
-                android:foreground="?selectableItemBackground"
-                android:text="Open Maps"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
-
-            <!--<TextView
-                android:id="@+id/btn_save_detail"
-                android:layout_width="@dimen/_220sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:background='@{data.l? @drawable/custom_layout_login : @drawable/custom_buttom}'
-                android:fontFamily="@font/poppinsregular"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="save"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp">
-
-            </TextView>-->
-        </LinearLayout>
-
-      <!--  <TextView
-            android:id="@+id/btn_save_edit_profile"
-            android:layout_width="@dimen/_220sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:background="@drawable/custom_layout_login"
-            android:fontFamily="@font/poppinsregular"
-            android:gravity="center"
-            android:text="save"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

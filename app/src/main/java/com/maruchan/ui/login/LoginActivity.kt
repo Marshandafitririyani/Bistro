@@ -1,6 +1,5 @@
 package com.maruchan.ui.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login){
+class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,7 +25,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         initClick()
 
     }
-    private fun initClick(){
+
+    private fun initClick() {
         binding.btnLogin.setOnClickListener {
             login()
         }
@@ -34,20 +34,22 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             openActivity<RegisterActivity>()
         }
     }
-    private fun login(){
 
-            if (binding.etPhoneEmail.isEmptyRequired(R.string.label_must_fill) ||
-                binding.etPassword.isEmptyRequired(R.string.label_must_fill)
-            ) {
-                return
-            }
-            val emailOrPhone = binding.etPhoneEmail.textOf()
-            val password = binding.etPassword.textOf()
+    private fun login() {
+
+        if (binding.etPhoneEmail.isEmptyRequired(R.string.label_must_fill) ||
+            binding.etPassword.isEmptyRequired(R.string.label_must_fill)
+        ) {
+            return
+        }
+        val emailOrPhone = binding.etPhoneEmail.textOf()
+        val password = binding.etPassword.textOf()
 
 
-            viewModel.login(emailOrPhone, password)
+        viewModel.login(emailOrPhone, password)
     }
-    private fun observe(){
+
+    private fun observe() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {

@@ -1,19 +1,16 @@
 package com.maruchan.ui.detail
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiCode
 import com.crocodic.core.api.ApiObserver
 import com.crocodic.core.api.ApiResponse
 import com.crocodic.core.data.CoreSession
 import com.crocodic.core.extension.toList
-import com.crocodic.core.extension.toObject
 import com.google.gson.Gson
 import com.maruchan.bistro.api.ApiService
 import com.maruchan.bistro.base.BaseObserver
 import com.maruchan.bistro.base.BaseViewModel
 import com.maruchan.bistro.data.room.bistroo.BistroList
-import com.maruchan.bistro.data.room.user.User
 import com.maruchan.bistro.data.room.user.UserDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -61,14 +58,12 @@ class DetailViewModel @Inject constructor(
                     Timber.d("cek api ${data.size}")
 
                     _apiResponse.emit(ApiResponse().responseSuccess())
-                    Log.d("cek ss","success")
 
                 }
 
                 override suspend fun onError(response: ApiResponse) {
                     super.onError(response)
                     _apiResponse.emit(ApiResponse().responseError())
-                    Log.d("cek err","error")
                 }
             })
     }

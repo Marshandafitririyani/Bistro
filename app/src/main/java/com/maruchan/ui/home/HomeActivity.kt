@@ -2,17 +2,14 @@ package com.maruchan.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
-import com.denzcoskun.imageslider.models.SlideModel
 import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
 import com.maruchan.bistro.const.Const
@@ -36,18 +33,15 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.activity_home) {
 
-
     private var isUser: Boolean = true
     private val bistroAll = ArrayList<BistroList?>()
     private val categoryList = ArrayList<Category?>()
     private var categoryId: String? = null
 
-    private val imageList = ArrayList<SlideModel>()
 
     private val adapterResto by lazy {
         ReactiveListAdapter<ItemRestoBinding, BistroList>(R.layout.item_resto).initItem { position, data ->
             val toEdit = Intent(this, DetailActivity::class.java).apply {
-                Log.d("cek data 1", "$data")
                 putExtra(Const.BISTRO.BISTRO, data)
             }
 
@@ -101,25 +95,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.etSearchFilter.setOnClickListener {
             autocompleteSpinner()
         }
-       /* binding.btnBakery.setOnClickListener {
-            openActivity<FastFoodActivity> {
-                putExtra(Const.CATEGORY.CATEGORY, 1)
-            }
-        }
-
-        binding.btnRamenDining.setOnClickListener {
-            openActivity<BakeryActivity> {
-                putExtra(Const.CATEGORY.CATEGORY, 2)
-            }
-        }
-
-        binding.btnLaunchDining.setOnClickListener {
-            openActivity<BakeryActivity> {
-                putExtra(Const.CATEGORY.CATEGORY, 3)
-            }
-        }*/
-
-
     }
 
 
@@ -146,7 +121,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     private fun searchFilter() {
         binding.etSearchFilter.doOnTextChanged { text, start, before, count ->
             if (text!!.isNotEmpty()) {
-                val filter = bistroAll.filter { it?.category?.name?.contains("$text", true) == true }
+                val filter =
+                    bistroAll.filter { it?.category?.name?.contains("$text", true) == true }
                 adapterResto.submitList(filter)
 
                 if (filter.isEmpty()) {
@@ -174,7 +150,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         }
         autoCompleteSpinner.setOnItemClickListener { parent, view, position, id ->
             val selectedItem = categoryList[position]
-            categoryId= selectedItem?.id.toString()
+            categoryId = selectedItem?.id.toString()
 
         }
     }
@@ -182,7 +158,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 
     private fun adapter() {
         binding.recyclerViewHome.adapter = adapterResto
-        Log.d("cek data 2", "$adapterResto")
     }
 
     private fun observe() {
@@ -202,7 +177,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 }
                 launch {
                     viewModel.bistroList.collect { bistro ->
-                        Log.d("cek data 3", "$bistro")
                         adapterResto.submitList(bistro)
                         binding.swipeRefreshLayout.isRefreshing = false
                         bistroAll.clear()

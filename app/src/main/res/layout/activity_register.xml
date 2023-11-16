@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -14,7 +14,8 @@
             android:layout_height="@dimen/_120sdp"
             android:layout_margin="@dimen/_5sdp"
             android:scaleType="fitXY"
-            android:src="@drawable/img_register" />
+            android:src="@drawable/img_register"
+            tools:ignore="ContentDescription" />
 
 
         <TextView
@@ -23,7 +24,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Username"
+            android:text="@string/username"
             android:textColor="@color/army"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
@@ -52,7 +53,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Phone/Email"
+            android:text="@string/phone_or_email"
             android:textColor="@color/army"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
@@ -73,7 +74,7 @@
             android:singleLine="true"
             android:textColor="@color/army"
             android:textSize="@dimen/_12sdp"
-            tools:ignore="Autofill,LabelFor" />
+            tools:ignore="Autofill,LabelFor,TextFields" />
 
 
         <TextView
@@ -82,9 +83,9 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/poppinsregular"
+            android:text="@string/password"
             android:textColor="@color/army"
             android:textSize="@dimen/_13ssp"
-            android:text="Password"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -121,10 +122,10 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/poppinsregular"
             android:text="Confirm Password"
-
             android:textColor="@color/army"
             android:textSize="@dimen/_13ssp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -160,7 +161,7 @@
             android:layout_marginStart="@dimen/_60sdp"
             android:layout_marginEnd="@dimen/_150sdp"
             android:gravity="start"
-            android:text="password_didn_t_match"
+            android:text="@string/password_didnt_match"
             android:textColor="@color/text_red"
             android:textSize="@dimen/_12ssp"
             android:visibility="gone"
@@ -176,7 +177,7 @@
             android:background="@drawable/custom_layout_login"
             android:fontFamily="@font/poppinsregular"
             android:gravity="center"
-            android:text="Register"
+            android:text="@string/register"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_13ssp" />
@@ -194,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:foreground="?selectableItemBackground"
                 android:gravity="center"
-                android:text="Don't have An Account?"
+                android:text="@string/don_t_have_an_account"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp" />
 
@@ -204,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:foreground="?selectableItemBackground"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/_13ssp" />
         </LinearLayout>

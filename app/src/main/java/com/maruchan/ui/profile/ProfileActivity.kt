@@ -3,7 +3,6 @@ package com.maruchan.ui.profile
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -17,15 +16,14 @@ import com.maruchan.bistro.R
 import com.maruchan.bistro.base.BaseActivity
 import com.maruchan.bistro.databinding.ActivityProfileBinding
 import com.maruchan.ui.edit.EditProfilrActivity
-import com.maruchan.ui.home.HomeActivity
 import com.maruchan.ui.password.EditPasswordActivity
-import com.maruchan.ui.register.RegisterActivity
 import com.maruchan.ui.screen.ScreenActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R.layout.activity_profile){
+class ProfileActivity :
+    BaseActivity<ActivityProfileBinding, ProfileViewModel>(R.layout.activity_profile) {
 
     private var isUser: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +33,7 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
         initClick()
     }
 
-    private fun initClick(){
+    private fun initClick() {
         binding.btnEditProfile.setOnClickListener {
             profile()
         }
@@ -46,7 +44,7 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
             logout()
         }
         binding.btnEditPassword.setOnClickListener {
-            openActivity<EditPasswordActivity> {  }
+            openActivity<EditPasswordActivity> { }
         }
     }
 
@@ -104,9 +102,11 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
         }
 
     }
+
     private fun getProfile() {
         viewModel.getProfile()
     }
+
     private fun logout() {
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         val customLayout: View = layoutInflater.inflate(R.layout.popup_logout, null)

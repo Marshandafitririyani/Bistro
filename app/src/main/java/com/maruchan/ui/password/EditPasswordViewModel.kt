@@ -24,22 +24,23 @@ class EditPasswordViewModel @Inject constructor(
     private val baseObserver: BaseObserver,
     private val session: CoreSession
 
-) : BaseViewModel()  {
+) : BaseViewModel() {
     private val _editPassword = MutableSharedFlow<ApiResponse>()
     val editPassword = _editPassword.asSharedFlow()
 
-    fun editPassword(oldPassword: String?, newPassword: String?, confirmPassword: String?) = viewModelScope.launch {
-        ApiObserver({ apiService.editPassword(oldPassword, newPassword,confirmPassword ) },
-            false, object : ApiObserver.ResponseListener {
-                override suspend fun onSuccess(response: JSONObject) {
-                    _editPassword.emit(ApiResponse().responseSuccess("Profile Updated"))
-                }
+    fun editPassword(oldPassword: String?, newPassword: String?, confirmPassword: String?) =
+        viewModelScope.launch {
+            ApiObserver({ apiService.editPassword(oldPassword, newPassword, confirmPassword) },
+                false, object : ApiObserver.ResponseListener {
+                    override suspend fun onSuccess(response: JSONObject) {
+                        _editPassword.emit(ApiResponse().responseSuccess("Profile Updated"))
+                    }
 
-                override suspend fun onError(response: ApiResponse) {
-                    super.onError(response)
-                    _editPassword.emit(ApiResponse().responseError())
+                    override suspend fun onError(response: ApiResponse) {
+                        super.onError(response)
+                        _editPassword.emit(ApiResponse().responseError())
+                    }
                 }
-            }
-        )
-    }
+            )
+        }
 }

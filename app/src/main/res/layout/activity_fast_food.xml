@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="data"
             type="com.maruchan.bistro.data.room.bistroo.BistroList" />
@@ -21,50 +23,54 @@
             android:id="@+id/linear_bakery"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <ImageView
-                android:id="@+id/btn_back"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:foreground="?selectableItemBackground"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_back_black" />
-
-            <TextView
-                android:id="@+id/bakery_title"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fast Food"
-                android:textColor="@color/army"
-                android:textStyle="bold"
-                android:layout_marginStart="@dimen/_70sdp"
-                android:textSize="@dimen/_20sdp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:fontFamily="@font/poppinsmedium"/>
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:foreground="?selectableItemBackground"
+                    android:labelFor="@+id/btn_back"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_back_black"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/bakery_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_70sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:gravity="center"
+                    android:text="@string/fast_food"
+                    android:textColor="@color/army"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
             <ImageView
+                android:id="@+id/blck_long"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:labelFor="@+id/blck_long"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_home_horizontala" />
+                android:src="@drawable/img_home_horizontala"
+                tools:ignore="ContentDescription" />
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipe_refresh_layout"
@@ -88,6 +94,7 @@
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_empty"
             android:layout_width="match_parent"
@@ -97,7 +104,7 @@
             android:layout_marginEnd="@dimen/_40sdp"
             android:fontFamily="@font/poppinsregular"
             android:gravity="center"
-            android:text="File Resto Is Empty"
+            android:text="@string/file_resto_is_empty"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

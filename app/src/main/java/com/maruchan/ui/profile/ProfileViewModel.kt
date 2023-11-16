@@ -20,7 +20,7 @@ import org.json.JSONObject
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileViewModel  @Inject constructor(
+class ProfileViewModel @Inject constructor(
     private val apiService: ApiService,
     private val gson: Gson,
     private val userDao: UserDao,
@@ -57,7 +57,6 @@ class ProfileViewModel  @Inject constructor(
                     session.clearAll()
                     userDao.logout()
                     logoutSuccess()
-
                 }
 
                 override suspend fun onError(response: ApiResponse) {
